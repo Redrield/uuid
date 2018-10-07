@@ -36,6 +36,7 @@ impl Uuid {
 #[cfg(test)]
 mod tests {
     use prelude::*;
+    use std::str::FromStr;
 
     #[test]
     fn test_conversion() {

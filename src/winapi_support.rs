@@ -21,13 +21,13 @@ impl Uuid {
     ///
     /// [`Uuid`]: ../struct.Uuid.html
     fn to_guid(&self) -> guiddef::GUID {
-        let (data1, data2, data3, data4) = self.to_fields_le();
+        let (data1, data2, data3, data4) = self.as_fields();
 
         guiddef::GUID {
             Data1: data1,
             Data2: data2,
             Data3: data3,
-            Data4: data4,
+            Data4: *data4,
         }
     }
 }

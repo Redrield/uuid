@@ -31,3 +31,16 @@ impl Uuid {
         }
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use prelude::*;
+
+    #[test]
+    fn test_conversion() {
+        let uuid = Uuid::from_str("735d359d-4bc4-4e07-8c49-eb3e99a048dc").unwrap();
+        let guid = uuid.to_guid();
+        assert_eq!(uuid, Uuid::from_guid(guid));
+    }
+}

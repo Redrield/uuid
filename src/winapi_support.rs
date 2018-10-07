@@ -57,6 +57,6 @@ mod tests {
 
         let uuid = Uuid::from_guid(guid).unwrap();
         assert_eq!("4a35229d-5527-4f30-8647-9dc54e1ee1e8", uuid.to_hyphenated().to_string());
-        assert_eq!(guid, uuid.to_guid());
+        assert_eq!(Ok(uuid), Uuid::from_guid(guid));
     }
 }
